@@ -1,5 +1,5 @@
 import "../styles/App.css";
-import LocationDetails from "./locationDetails";
+import LocationDetails from "./LocationDetails";
 
 function App({location}) {
  const {city, country} = location;
