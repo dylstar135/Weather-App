@@ -1,15 +1,28 @@
-import React from "react";
+// TodoForm.js
+import React, { useState } from "react";
 
-const TodoForm = () => {
+export const TodoForm = ({ addTodo }) => {
+  const [value, setValue] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    addTodo(value);
+
+    setValue("");
+  };
+
   return (
-    <form className="todoForm">
+    <form className="TodoForm" onSubmit={handleSubmit}>
       <input
         type="text"
         className="todo-input"
+        value={value}
         placeholder="what do you want to pack?"
+        onChange={(e) => setValue(e.target.value)}
       />
       <button type="submit" className="todo-btn">
-        Submit
+        Pack Item
       </button>
     </form>
   );
